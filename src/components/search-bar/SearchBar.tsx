@@ -20,11 +20,12 @@ const SearchBar: FC<SearchBarProps> = ({ onSubmit, loading, placeholder = 'Searc
   const { value, setValue, handleSubmitEditing } = useSearchBarLogic(onSubmit);
 
   return (
-    <View style={[styles.row, { backgroundColor: colors.bg }]}>
-      <Ionicons name="search" size={20} style={styles.icon} />
+    <View style={[styles.row, { backgroundColor: colors.sub }]}>
+      <Ionicons name="search" size={20} style={styles.icon} color={colors.text} />
       <TextInput
         style={styles.input}
         value={value}
+        placeholderTextColor={colors.text}
         onChangeText={setValue}
         placeholder={placeholder}
         returnKeyType="search"
@@ -34,7 +35,7 @@ const SearchBar: FC<SearchBarProps> = ({ onSubmit, loading, placeholder = 'Searc
         <ActivityIndicator />
       ) : (
         <Pressable onPress={handleSubmitEditing}>
-          <Ionicons name="arrow-forward-circle" size={24} />
+          <Ionicons name="arrow-forward-circle" size={24} color={colors.text} />
         </Pressable>
       )}
     </View>

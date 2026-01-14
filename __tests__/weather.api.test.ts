@@ -1,3 +1,15 @@
+jest.mock('expo-constants', () => ({
+  __esModule: true,
+  default: {
+    expoConfig: {
+      extra: {
+        OWM_API_KEY: 'test-key',
+        API_BASE_URL: 'https://api.openweathermap.org/data/2.5',
+      },
+    },
+  },
+}));
+
 import { configureStore } from '@reduxjs/toolkit';
 
 import { weatherApi } from '@/src/services/weather.api';

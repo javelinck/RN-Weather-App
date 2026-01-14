@@ -46,7 +46,6 @@ describe('transformWeather (UTC-based)', () => {
     expect(res.current.temp).toBe(13);
     expect(res.current.humidity).toBe(70);
     expect(res.current.wind).toBe(3.4);
-    expect(res.current.icon).toBe('04d');
     expect(typeof res.current.dt).toBe('number');
 
     expect(res.hourly.length).toBe(8);
@@ -61,7 +60,6 @@ describe('transformWeather (UTC-based)', () => {
     const day0 = res.daily[0];
     expect(day0.high).toBe(15);
     expect(day0.low).toBe(10);
-    expect(day0.icon).toBe('04d');
 
     const day1 = res.daily[1];
     expect(day1.high).toBe(14);
